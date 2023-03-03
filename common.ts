@@ -4,7 +4,7 @@ export const config = {
     runtime: 'edge',
 }
 
-export const checkEnvInit = () => {
+export async function checkEnvInit() {
     if (!process.env.GOCQ_HTTP_URL) {
         console.log("GOCQ_HTTP_URL not set")
         return false
@@ -24,6 +24,23 @@ export async function jsonResponse(status: number, data: any, init?: ResponseIni
       'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     },
   })
+}
+
+export async function sendRequest(path: string, json?: any) {
+  try {
+    const res = await fetch(`${process.env.GOCQ_HTTP_URL}${path}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(json),
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    console.log(error)
+    return null
+  }
 }
 
 export async function commonResponse(code: number) {
