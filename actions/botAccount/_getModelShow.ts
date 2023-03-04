@@ -1,8 +1,10 @@
-import { sendRequest } from "../../common"
+import { sendRequest } from "../../nextkit/common"
 
 /**
  * @param model Model Name (string)
- * @returns variants of model_show (json array)
+ * @returns variants (array)
+ * @returns variants.model_show Name (string)
+ * @returns variants.need_pay (boolean)
  */
 
 export default async function _getModelShow(model: string) {

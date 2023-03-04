@@ -1,4 +1,4 @@
-import { sendRequest } from "../../common";
+import { sendRequest } from "../../nextkit/common";
 
 /**
  * @returns user_id QQ Number (int64)

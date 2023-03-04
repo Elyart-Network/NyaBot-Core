@@ -1,4 +1,4 @@
-import { sendRequest } from "../../common"
+import { sendRequest } from "../../nextkit/common"
 
 /**
  * @returns Unknown (json)
