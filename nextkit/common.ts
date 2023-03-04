@@ -36,7 +36,7 @@ export async function sendRequest(path: string, json?: any) {
       body: JSON.stringify(json),
     })
     const data = await res.json()
-    return data
+    return data.data
   } catch (error) {
     console.log(error)
     return null
