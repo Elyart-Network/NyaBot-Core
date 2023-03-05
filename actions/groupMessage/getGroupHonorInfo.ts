@@ -12,7 +12,7 @@ import { sendRequest } from "../../nextkit/common"
  * @returns emotion_list Emotion List (array) (emotion)
  */
 
-export async function getGroupHonorInfo(group_id: number, type: string) {
+export default async function getGroupHonorInfo(group_id: number, type: string) {
     const data = {
         "group_id": group_id,
         "type": type

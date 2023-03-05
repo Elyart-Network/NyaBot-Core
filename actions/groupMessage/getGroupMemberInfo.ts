@@ -22,7 +22,7 @@ import { sendRequest } from "../../nextkit/common"
  * @returns shut_up_timestamp Shut Up Timestamp (number)
  */
 
-export async function getGroupMemberInfo(group_id: number, user_id: number, no_cache?: boolean) {
+export default async function getGroupMemberInfo(group_id: number, user_id: number, no_cache?: boolean) {
     const data = {
         "group_id": group_id,
         "user_id": user_id,

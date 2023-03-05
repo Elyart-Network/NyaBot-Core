@@ -12,7 +12,7 @@ import { sendRequest } from "../../nextkit/common"
  * @returns json.max_member_count Max Member Count (number)
  */
 
-export async function getGroupList(no_cache?: boolean) {
+export default async function getGroupList(no_cache?: boolean) {
     const data = {
         no_cache: no_cache
     }
