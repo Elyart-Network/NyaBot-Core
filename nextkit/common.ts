@@ -26,14 +26,14 @@ export async function jsonResponse(status: number, data: any, init?: ResponseIni
   })
 }
 
-export async function sendRequest(path: string, json?: any) {
+export async function sendRequest(path: string, json?: string) {
   try {
     const res = await fetch(`${process.env.GOCQ_HTTP_URL}${path}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(json),
+      body: json,
     })
     const data = await res.json()
     return data.data

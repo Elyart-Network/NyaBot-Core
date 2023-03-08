@@ -1,7 +1,7 @@
 import { sendRequest } from "../../nextkit/common"
 
-interface ForwardNode {
-    "type": "node",
+export interface ForwardNode {
+    "type": string,
     "data": any
 }
 
